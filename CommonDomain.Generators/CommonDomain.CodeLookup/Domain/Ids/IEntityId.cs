@@ -1,4 +1,4 @@
-     namespace CommonDomain.Sample.CodeLookups.Domain.Ids;
+     namespace CommonDomain.CodeLookup.Domain.Ids;
 
     public interface IEntityId<TId> where TId : IEntityId<TId>
     {

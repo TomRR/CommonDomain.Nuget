@@ -1,4 +1,5 @@
-namespace CommonDomain.Generators.Generators.Entities;
+namespace CommonDomain.Generators.Generators.ValueObjects;
+
 
 /// <summary>
 /// A sample source generator that creates a custom report based on class properties. The target class should be annotated with the 'Generators.ReportAttribute' attribute.
@@ -12,8 +13,8 @@ public class ValueObjectBaseGenerator : IIncrementalGenerator
         // Filter classes annotated with the [Report] attribute. Only filtered Syntax Nodes can trigger code generation.
         var provider = context.SyntaxProvider
             .CreateSyntaxProvider(
-                (s, _) => s is ClassDeclarationSyntax,
-                (ctx, _) => GetClassDeclarationForSourceGen(ctx))
+                (s, _) => s is ClassDeclarationSyntax || s is StructDeclarationSyntax || s is RecordDeclarationSyntax,
+                (ctx, _) => GetTypeDeclarationForSourceGen(ctx))
             .Where(t => t.reportAttributeFound)
             .Select((t, _) => t.Item1);
 
@@ -22,35 +23,24 @@ public class ValueObjectBaseGenerator : IIncrementalGenerator
             ((ctx, t) => GenerateCode(ctx, t.Left, t.Right)));
     }
 
-    /// <summary>
-    /// Checks whether the Node is annotated with the [Report] attribute and maps syntax context to the specific node type (ClassDeclarationSyntax).
-    /// </summary>
-    /// <param name="context">Syntax context, based on CreateSyntaxProvider predicate</param>
-    /// <returns>The specific cast and whether the attribute was found.</returns>
-    private static (ClassDeclarationSyntax, bool reportAttributeFound) GetClassDeclarationForSourceGen(
+    private static (TypeDeclarationSyntax, bool reportAttributeFound) GetTypeDeclarationForSourceGen(
         GeneratorSyntaxContext context)
     {
-        var classDeclarationSyntax = (ClassDeclarationSyntax)context.Node;
+        if (context.Node is not TypeDeclarationSyntax typeDeclarationSyntax)
+            return (null!, false);
 
-        // Go through all attributes of the class.
-        foreach (AttributeListSyntax attributeListSyntax in classDeclarationSyntax.AttributeLists)
-        foreach (AttributeSyntax attributeSyntax in attributeListSyntax.Attributes)
+        foreach (var attributeListSyntax in typeDeclarationSyntax.AttributeLists)
+        foreach (var attributeSyntax in attributeListSyntax.Attributes)
         {
             if (context.SemanticModel.GetSymbolInfo(attributeSyntax).Symbol is not IMethodSymbol attributeSymbol)
-            {
-                continue; // if we can't get the symbol, ignore it
-            }
+                continue;
 
-            string attributeName = attributeSymbol.ContainingType.ToDisplayString();
-
-            // filter
+            var attributeName = attributeSymbol.ContainingType.ToDisplayString();
             if (attributeName.Contains("ValueObject"))
-            {
-                return (classDeclarationSyntax, true);
-            }
+                return (typeDeclarationSyntax, true);
         }
 
-        return (classDeclarationSyntax, false);
+        return (typeDeclarationSyntax, false);
     }
 
     /// <summary>
@@ -61,24 +51,21 @@ public class ValueObjectBaseGenerator : IIncrementalGenerator
     /// <param name="compilation">Compilation used to provide access to the Semantic Model.</param>
     /// <param name="classDeclarations">Nodes annotated with the [Report] attribute that trigger the generate action.</param>
     private void GenerateCode(SourceProductionContext context, Compilation compilation,
-        ImmutableArray<ClassDeclarationSyntax> classDeclarations)
+        ImmutableArray<TypeDeclarationSyntax> typeDeclarations)
     {
-        // Go through all filtered class declarations.
-        foreach (var classDeclarationSyntax in classDeclarations)
+        foreach (var typeDeclarationSyntax in typeDeclarations)
         {
-            // We need to get semantic model of the class to retrieve metadata.
-            var semanticModel = compilation.GetSemanticModel(classDeclarationSyntax.SyntaxTree);
-
-            // Symbols allow us to get the compile-time information.
-            if (semanticModel.GetDeclaredSymbol(classDeclarationSyntax) is not INamedTypeSymbol classSymbol)
-            {
+            var semanticModel = compilation.GetSemanticModel(typeDeclarationSyntax.SyntaxTree);
+            if (semanticModel.GetDeclaredSymbol(typeDeclarationSyntax) is not INamedTypeSymbol typeSymbol)
                 continue;
-            }
 
-            var namespaceName = classSymbol.ContainingNamespace.ToDisplayString();
+            var namespaceName = typeSymbol.ContainingNamespace.ToDisplayString();
+            var className = typeDeclarationSyntax.Identifier.Text;
 
-            // 'Identifier' means the token of the node. Get class name from the syntax node.
-            var className = classDeclarationSyntax.Identifier.Text;
+            // Find properties with the [Updater] attribute
+
+
+
 
             // Build up the source code
             var code = DefaultCode(namespaceName, className);
@@ -87,7 +74,7 @@ public class ValueObjectBaseGenerator : IIncrementalGenerator
             context.AddSource($"{className}Base.g.cs", SourceText.From(code, Encoding.UTF8));
         }
     }
-
+    
     private static string DefaultCode(string namespaceName, string className) => $@"// <auto-generated/>
 using Generators.Domain.Common;
 
