@@ -3,7 +3,7 @@
     <PropertyGroup>
         <TargetFramework>net9.0</TargetFramework>
         <Nullable>enable</Nullable>
-        <RootNamespace>CommonDomain.Generators.Sample</RootNamespace>
+        <RootNamespace>CommonDomain.Sample</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
@@ -16,6 +16,10 @@
 
     <ItemGroup>
       <AdditionalFiles Include="_samples\DDD.UbiquitousLanguageRegistry.txt" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="CodeLookups\" />
     </ItemGroup>
 
 </Project>

@@ -6,7 +6,7 @@
 
         <IsPackable>false</IsPackable>
 
-        <RootNamespace>CommonDomain.Generators.Tests</RootNamespace>
+        <RootNamespace>CommonDomain.Tests</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Entities;
 
-namespace CommonDomain.Generators.Sample;
+namespace CommonDomain.Sample._samples;
 
 public class Examples
 {
@@ -19,7 +19,7 @@ public class Examples
     }
 
     // Execute generated method Report
-    public IEnumerable<string> CreateEntityReport(_samples.SampleEntity entity)
+    public IEnumerable<string> CreateEntityReport(SampleEntity entity)
     {
         return entity.Report();
     }

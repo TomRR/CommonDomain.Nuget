@@ -12,7 +12,7 @@ using System;
 
 namespace {Namespace};
 
-public interface IDateTimeProvider
+public partial interface IDateTimeProvider
 {{
     DateTime UtcNow {{ get; }}
 }}";

@@ -1,6 +1,4 @@
-    using System;
-
-    namespace CommonDomain.Generators.Sample.Domain.Common;
+     namespace CommonDomain.Sample.CodeLookups.Domain.Ids;
 
     public interface IEntityId<TId> where TId : IEntityId<TId>
     {

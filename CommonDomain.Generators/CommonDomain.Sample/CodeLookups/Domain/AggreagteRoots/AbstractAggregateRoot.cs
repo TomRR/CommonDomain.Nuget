@@ -1,6 +1,8 @@
 using System.Collections.Generic;
+using CommonDomain.Sample.CodeLookups.Domain.Entities;
+using CommonDomain.Sample.CodeLookups.Domain.Ids;
 
-namespace CommonDomain.Generators.Sample.Domain.Common;
+namespace CommonDomain.Sample.CodeLookups.Domain.AggreagteRoots;
 
 public interface IDomainEvent { /* Marker interface, might have Timestamp etc. */ }
 

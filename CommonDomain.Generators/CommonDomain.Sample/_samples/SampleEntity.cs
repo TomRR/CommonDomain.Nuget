@@ -1,6 +1,6 @@
 using Generators;
 
-namespace CommonDomain.Generators.Sample._samples;
+namespace CommonDomain.Sample._samples;
 
 // This code will not compile until you build the project with the Source Generators
 

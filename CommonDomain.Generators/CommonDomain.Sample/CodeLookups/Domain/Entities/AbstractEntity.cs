@@ -1,6 +1,6 @@
-using System;
+using CommonDomain.Sample.CodeLookups.Domain.Ids;
 
-namespace CommonDomain.Generators.Sample.Domain.Common;
+namespace CommonDomain.Sample.CodeLookups.Domain.Entities;
 
 public abstract partial class Entity<TId> where TId : IEntityId<TId>
 {
@@ -21,13 +21,5 @@ public abstract partial class Entity<TId> where TId : IEntityId<TId>
         if (other.GetType() != GetType()) return false;
 
         return Id.Equals(other.Id);
-    }
-}
-
-public abstract partial class Entity<TId> where TId : IEntityId<TId>
-{
-    public string Test()
-    {
-        return "rets";
     }
 }

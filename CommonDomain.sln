@@ -2,9 +2,9 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonDomain.Generators", "CommonDomain.Generators\CommonDomain.Generators\CommonDomain.Generators.csproj", "{1C669BBC-33DF-4240-9F21-31C48D20A3E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonDomain.Generators.Sample", "CommonDomain.Generators\CommonDomain.Generators.Sample\CommonDomain.Generators.Sample.csproj", "{8AD71CA8-2264-478A-A578-415A133D07CD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonDomain.Sample", "CommonDomain.Generators\CommonDomain.Sample\CommonDomain.Sample.csproj", "{8AD71CA8-2264-478A-A578-415A133D07CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonDomain.Generators.Tests", "CommonDomain.Generators\CommonDomain.Generators.Tests\CommonDomain.Generators.Tests.csproj", "{2735D843-C710-4CEE-BA0D-53DC935F67F9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonDomain.Tests", "CommonDomain.Generators\CommonDomain.Tests\CommonDomain.Tests.csproj", "{2735D843-C710-4CEE-BA0D-53DC935F67F9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
