@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
-        <IsPackable>false</IsPackable>
+        <IsPackable>true</IsPackable>
         <Nullable>enable</Nullable>
         <LangVersion>latest</LangVersion>
 
@@ -10,7 +10,16 @@
         <IsRoslynComponent>true</IsRoslynComponent>
 
         <RootNamespace>CommonDomain.Generators</RootNamespace>
-        <PackageId>CommonDomain.Generators</PackageId>
+        <Version>0.0.2</Version>
+        <Authors>Tom - Robert Resing</Authors>
+        <ProductName>CommonDomain</ProductName>
+        <Company>TomRR</Company>
+        <Description>
+            Id Generation: Autogenerate Ids for Entries and AggreggatRoots via Attribute
+            Generation Base classes: Autogenerate Bases for AggreggatRoots, Entries and ValueObjects via Attribute
+        </Description>
+        <PackageId>TomRR.Core.CommonDomain</PackageId>
+        <PackageTags>CommonDomain, TomRR</PackageTags>
     </PropertyGroup>
 
     <ItemGroup>
