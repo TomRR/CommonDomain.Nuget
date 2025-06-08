@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <RootNamespace>CommonDomain.Sample</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\CommonDomain.Generators\CommonDomain.Generators.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Remove="DDD.UbiquitousLanguageRegistry.txt"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <AdditionalFiles Include="_samples\DDD.UbiquitousLanguageRegistry.txt" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="CodeLookups\" />
+    </ItemGroup>
+
+</Project>
