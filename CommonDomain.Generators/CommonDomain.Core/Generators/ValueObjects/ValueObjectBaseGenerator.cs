@@ -1,4 +1,4 @@
-namespace CommonDomain.Generators.Generators.ValueObjects;
+namespace CommonDomain.Core.Generators.ValueObjects;
 
 
 /// <summary>

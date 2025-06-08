@@ -1,4 +1,4 @@
-namespace CommonDomain.Generators.Generators.Entities;
+namespace CommonDomain.Core.Generators.Entities;
 
 [Generator]
 public class AbstractEntityGenerator : IIncrementalGenerator

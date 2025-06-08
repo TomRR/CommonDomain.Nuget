@@ -3,11 +3,11 @@ using Generators.Attributes;
 namespace CommonDomain.Sample;
 
 [Entity]
-public sealed partial class Depot
+public sealed partial class Depot2
 {
 }
 [ValueObject]
-public readonly partial record struct TimeStamp
+public readonly partial record struct TimeStamp2
 {
 }
 
@@ -20,6 +20,6 @@ public sealed partial class Asset
 {
 }
 [AggregateRoot]
-public sealed partial class Admin
+public sealed partial class Admin2
 {
 }

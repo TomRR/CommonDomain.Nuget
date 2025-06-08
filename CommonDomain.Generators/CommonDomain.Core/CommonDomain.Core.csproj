@@ -9,7 +9,7 @@
         <EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
         <IsRoslynComponent>true</IsRoslynComponent>
 
-        <RootNamespace>CommonDomain.Generators</RootNamespace>
+        <RootNamespace>CommonDomain.Core</RootNamespace>
         <Version>0.0.2</Version>
         <Authors>Tom - Robert Resing</Authors>
         <ProductName>CommonDomain</ProductName>

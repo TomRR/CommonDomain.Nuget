@@ -1,6 +1,6 @@
 using System.IO;
 
-namespace CommonDomain.Generators._samples;
+namespace CommonDomain.Core._samples;
 
 /// <summary>
 /// A sample source generator that creates C# classes based on the text file (in this case, Domain Driven Design ubiquitous language registry).

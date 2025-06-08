@@ -7,7 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\CommonDomain.Generators\CommonDomain.Generators.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false"/>
+        <ProjectReference Include="..\CommonDomain.Core\CommonDomain.Core.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
     </ItemGroup>
 
     <ItemGroup>
@@ -16,10 +16,6 @@
 
     <ItemGroup>
       <AdditionalFiles Include="_samples\DDD.UbiquitousLanguageRegistry.txt" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="CodeLookups\" />
     </ItemGroup>
 
 </Project>

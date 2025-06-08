@@ -1,4 +1,4 @@
-namespace CommonDomain.Generators.Generators.Entities;
+namespace CommonDomain.Core.Generators.Entities;
 
 /// <summary>
 /// A sample source generator that creates a custom report based on class properties. The target class should be annotated with the 'Generators.ReportAttribute' attribute.
@@ -93,7 +93,7 @@ public class EntityBaseGenerator : IIncrementalGenerator
                 foreach (var attr in propertySymbol.GetAttributes())
                 {
                     const string UpdaterAttributeFullName =
-                        "CommonDomain.Generators.UpdatePropertyGenerators.UpdaterAttribute"; // ADJUST THIS NAMESPACE if needed
+                        "CommonDomain.Core.UpdatePropertyGenerators.UpdaterAttribute"; // ADJUST THIS NAMESPACE if needed
                     INamedTypeSymbol? updaterAttributeSymbol =
                         compilation.GetTypeByMetadataName(UpdaterAttributeFullName);
                     if (SymbolEqualityComparer.Default.Equals(attr.AttributeClass, updaterAttributeSymbol))

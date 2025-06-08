@@ -1,4 +1,4 @@
-namespace CommonDomain.Generators.Generators.AggregateRoots;
+namespace CommonDomain.Core.Generators.AggregateRoots;
 
 [Generator]
 public class AbstractAggregateRootGenerator : IIncrementalGenerator

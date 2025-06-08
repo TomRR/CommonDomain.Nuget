@@ -1,6 +1,6 @@
 using System.IO;
 using System.Linq;
-using CommonDomain.Generators._samples;
+using CommonDomain.Core._samples;
 using CommonDomain.Generators.Tests.Utils;
 using Microsoft.CodeAnalysis.CSharp;
 using Xunit;
