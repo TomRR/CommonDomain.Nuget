@@ -1,6 +1,6 @@
-using CommonDomain.Sample.CodeLookups.Domain.Ids;
+using CommonDomain.CodeLookup.Domain.Ids;
 
-namespace CommonDomain.Sample.CodeLookups.Domain.Entities;
+namespace CommonDomain.CodeLookup.Domain.Entities;
 
 public abstract partial class Entity<TId> where TId : IEntityId<TId>
 {

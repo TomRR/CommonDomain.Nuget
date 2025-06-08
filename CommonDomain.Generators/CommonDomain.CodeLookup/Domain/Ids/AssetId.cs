@@ -1,4 +1,4 @@
-namespace CommonDomain.Sample.CodeLookups.Domain.Ids;
+namespace CommonDomain.CodeLookup.Domain.Ids;
 
 public readonly record struct AssetId : IEntityId<AssetId>
 {

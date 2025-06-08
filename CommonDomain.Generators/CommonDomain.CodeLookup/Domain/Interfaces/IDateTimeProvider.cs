@@ -1,4 +1,4 @@
-namespace CommonDomain.Sample.CodeLookups.Domain.Interfaces;
+namespace CommonDomain.CodeLookup.Domain.Interfaces;
 
 public partial interface IDateTimeProvider
 {
