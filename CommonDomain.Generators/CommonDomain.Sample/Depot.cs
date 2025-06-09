@@ -2,6 +2,10 @@ using Generators.Attributes;
 
 namespace CommonDomain.Sample;
 
+[AggregateRoot]
+public sealed partial class Depot
+{
+}
 [Entity]
 public sealed partial class Depot2
 {

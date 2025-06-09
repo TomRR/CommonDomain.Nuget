@@ -10,7 +10,7 @@
         <IsRoslynComponent>true</IsRoslynComponent>
 
         <RootNamespace>CommonDomain.Core</RootNamespace>
-        <Version>0.0.2</Version>
+        <Version>0.0.3</Version>
         <Authors>Tom - Robert Resing</Authors>
         <ProductName>CommonDomain</ProductName>
         <Company>TomRR</Company>
@@ -21,7 +21,9 @@
         <PackageId>TomRR.Core.CommonDomain</PackageId>
         <PackageTags>CommonDomain, TomRR</PackageTags>
     </PropertyGroup>
-
+    <ItemGroup>
+        <None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+    </ItemGroup>
     <ItemGroup>
         <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.4">
             <PrivateAssets>all</PrivateAssets>
