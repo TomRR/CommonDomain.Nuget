@@ -1,13 +1,17 @@
-using Generators.Attributes;
+using CommonDomain.Core.Generators.Attributes;
 
 namespace CommonDomain.Sample;
 
-[Entity]
+[AggregateRoot]
 public sealed partial class Depot
 {
 }
+[Entity]
+public sealed partial class Depot2
+{
+}
 [ValueObject]
-public readonly partial record struct TimeStamp
+public readonly partial record struct TimeStamp2
 {
 }
 
@@ -20,6 +24,10 @@ public sealed partial class Asset
 {
 }
 [AggregateRoot]
-public sealed partial class Admin
+public sealed partial class Admin2
+{
+}
+[AggregateRoot]
+public sealed partial class Admin3
 {
 }

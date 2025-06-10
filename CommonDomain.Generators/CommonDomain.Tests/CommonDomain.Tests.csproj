@@ -20,7 +20,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\CommonDomain.Generators\CommonDomain.Generators.csproj"/>
+        <ProjectReference Include="..\CommonDomain.Core\CommonDomain.Core.csproj" />
     </ItemGroup>
 
 
