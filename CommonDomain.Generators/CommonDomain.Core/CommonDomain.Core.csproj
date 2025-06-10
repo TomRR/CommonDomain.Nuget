@@ -10,7 +10,7 @@
         <IsRoslynComponent>true</IsRoslynComponent>
 
         <RootNamespace>CommonDomain.Core</RootNamespace>
-        <Version>0.0.3</Version>
+        <Version>0.0.5</Version>
         <Authors>Tom - Robert Resing</Authors>
         <ProductName>CommonDomain</ProductName>
         <Company>TomRR</Company>
