@@ -1,4 +1,4 @@
-using Generators.Attributes;
+using CommonDomain.Core.Generators.Attributes;
 
 namespace CommonDomain.Sample;
 
@@ -25,5 +25,9 @@ public sealed partial class Asset
 }
 [AggregateRoot]
 public sealed partial class Admin2
+{
+}
+[AggregateRoot]
+public sealed partial class Admin3
 {
 }
