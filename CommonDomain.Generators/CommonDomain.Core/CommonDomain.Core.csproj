@@ -10,8 +10,12 @@
         <IsRoslynComponent>true</IsRoslynComponent>
 
         <RootNamespace>CommonDomain.Core</RootNamespace>
-        <Version>0.0.5</Version>
-        <Authors>Tom - Robert Resing</Authors>
+        <Version>0.0.6</Version>
+        <PackageReleaseNotes>
+            0.0.6:
+        </PackageReleaseNotes>
+        
+        <Authors>Tom-Robert Resing</Authors>
         <ProductName>CommonDomain</ProductName>
         <Company>TomRR</Company>
         <Description>
@@ -19,8 +23,22 @@
             Generation Base classes: Autogenerate Bases for AggreggatRoots, Entries and ValueObjects via Attribute
         </Description>
         <PackageId>TomRR.Core.CommonDomain</PackageId>
-        <PackageTags>CommonDomain, TomRR</PackageTags>
+        <PackageTags>CommonDomain, TomRR, DDD, SourceGenerator</PackageTags>
+
+        <Copyright>Copyright © $([System.DateTime]::Now.Year) Tom-Robert Resing</Copyright>
+
+        <RepositoryType>git</RepositoryType>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <PackageProjectUrl>https://github.com/TomRR/CommonDomain.Nuget</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/TomRR/CommonDomain.Nuget.git</RepositoryUrl>
+        
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageLicenseFile>LICENSE</PackageLicenseFile>
     </PropertyGroup>
+    <ItemGroup>
+        <None Include="$(MSBuildThisFileDirectory)..\..\README.md" Pack="true" PackagePath="" />
+        <None Include="$(MSBuildThisFileDirectory)..\..\LICENSE" Pack="true" PackagePath="" />
+    </ItemGroup>
     <ItemGroup>
         <None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
     </ItemGroup>
